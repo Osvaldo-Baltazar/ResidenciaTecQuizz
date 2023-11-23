@@ -29,8 +29,13 @@ const authService = {
 
   register: async (userData) => {
     try {
-      const response = await axios.post(`${API_URL}/register`, userData);
-      return response.data;
+      console.log("Antes de enviar el registro:" + userData);
+      const response = await axios.post(`${API_URL}/registro`, userData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      return response;
     } catch (error) {
       throw error;
     }

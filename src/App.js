@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import Login from "./components/Login";
 import Home from "./components/Home";
+import Register from "./components/Register";
 import authService from "./services/authService";
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -30,6 +31,7 @@ const App = () => {
       <div>
         <Switch>
           <Route path="/login" component={Login} />
+          <Route path="/Register" component={Register} />
           <PrivateRoute path="/home" component={Home} />
           priv
         </Switch>
