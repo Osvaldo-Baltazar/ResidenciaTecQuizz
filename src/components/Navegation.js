@@ -1,6 +1,16 @@
 // src/components/Navegation.js
 import React from "react";
+import authService from "../services/authService";
+import { useHistory } from "react-router-dom";
+
 const Navegation = () => {
+  const history = useHistory();
+
+  const HandleSignOut = async () => {
+    authService.signOut();
+    history.push("/login");
+  };
+
   return (
     <nav
       className="navbar bg-dark navbar-expand-lg bg-body-tertiary"
@@ -34,14 +44,19 @@ const Navegation = () => {
               </a>
               <ul className="dropdown-menu">
                 <li>
-                  <a className="dropdown-item" href="/Preguntas">
+                  <a className="dropdown-item" href="/Question">
                     Preguntas
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/Secciones">
+                  <a className="dropdown-item" href="/Section">
                     Secciones
                   </a>
+                </li>
+                <li>
+                  <button className="dropdown-item" onClick={HandleSignOut}>
+                    Cerrar sesión
+                  </button>
                 </li>
               </ul>
             </li>
