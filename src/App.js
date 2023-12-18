@@ -11,6 +11,8 @@ import Login from "./components/Login";
 import Home from "./components/Home";
 import Register from "./components/Register";
 import authService from "./services/authService";
+import Section from "./components/Section";
+import Question from "./components/Question";
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -33,6 +35,8 @@ const App = () => {
           <Route path="/login" component={Login} />
           <Route path="/Register" component={Register} />
           <PrivateRoute path="/home" component={Home} />
+          <PrivateRoute path="/Section" component={Section} />
+          <PrivateRoute path="/Question" component={Question} />
           priv
         </Switch>
       </div>

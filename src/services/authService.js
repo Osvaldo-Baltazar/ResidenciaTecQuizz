@@ -40,9 +40,11 @@ const authService = {
       throw error;
     }
   },
-
   getToken: () => {
     return Cookies.get("token");
+  },
+  signOut: () => {
+    Cookies.remove("token");
   },
 };
 

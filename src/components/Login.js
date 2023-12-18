@@ -16,6 +16,7 @@ const Login = () => {
       );
 
       console.log("Login successful", response);
+
       setCorreo("");
       setPassword("");
       history.push("/home");
